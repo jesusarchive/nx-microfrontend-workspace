@@ -8,6 +8,8 @@ const Remote1 = React.lazy(() => import('remote1/Module'));
 
 const Remote2 = React.lazy(() => import('remote2/Module'));
 
+const SpaRickandmorty = React.lazy(() => import('spa-rickandmorty/Module'));
+
 export function App() {
   return (
     <React.Suspense fallback={null}>
@@ -23,6 +25,10 @@ export function App() {
         <li>
           <Link to="/remote2">Remote2</Link>
         </li>
+
+        <li>
+          <Link to="/spa-rickandmorty">SpaRickandmorty</Link>
+        </li>
       </ul>
       <Routes>
         <Route path="/" element={<NxWelcome title="host-app" />} />
@@ -30,6 +36,8 @@ export function App() {
         <Route path="/remote1" element={<Remote1 />} />
 
         <Route path="/remote2" element={<Remote2 />} />
+
+        <Route path="/spa-rickandmorty" element={<SpaRickandmorty />} />
       </Routes>
     </React.Suspense>
   );
