@@ -1,4 +1,4 @@
-import { useQuery } from '@react-monorepo/react-query';
+import { useQuery } from '@nx-microfrontend-workspace/react-query';
 import getRickAndMortyCharacters, {
   type GetRickAndMortyCharactersParams,
 } from '../../../rest-clients/rick-and-morty/get-rick-and-morty-characters';

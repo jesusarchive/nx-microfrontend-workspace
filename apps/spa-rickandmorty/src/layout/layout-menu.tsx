@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { Menu } from '@react-monorepo/ui';
+import { Menu } from '@nx-microfrontend-workspace/components-ui';
 import { Home, Users } from 'lucide-react';
 
 export default function LayoutMenu() {
