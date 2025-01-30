@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { cn } from '@react-monorepo/utils';
+import { cn } from '@nx-microfrontend-workspace/utils';
 
 export type SpinnerProps = React.ButtonHTMLAttributes<HTMLDivElement>;
 

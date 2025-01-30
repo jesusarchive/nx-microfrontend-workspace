@@ -1,42 +1,13 @@
-import { Meta, StoryFn } from '@storybook/react';
-import Button, { ButtonProps } from '../Button';
+import type { Meta, StoryObj } from '@storybook/react';
+import Button from '../button';
 
-export default {
-  title: 'Components/Button',
+const meta: Meta<typeof Button> = {
   component: Button,
-  argTypes: {
-    variant: {
-      control: {
-        type: 'select',
-        options: [
-          'default',
-          'primary',
-          'secondary',
-          'outline',
-          'ghost',
-          'link',
-        ],
-      },
-    },
-    size: {
-      control: {
-        type: 'select',
-        options: ['sm', 'md', 'lg', 'icon'],
-      },
-    },
-    loading: { control: 'boolean' },
-    fullWidth: { control: 'boolean' },
-  },
-} as Meta;
+  title: 'Button',
+};
+export default meta;
+type Story = StoryObj<typeof Button>;
 
-const Template: StoryFn<ButtonProps> = (args) => (
-  <Button {...args}>Button</Button>
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  variant: 'default',
-  size: 'md',
-  loading: false,
-  fullWidth: false,
+export const Primary: Story = {
+  args: { children: 'Primary', variant: 'primary' },
 };
