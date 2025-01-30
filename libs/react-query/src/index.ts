@@ -1,1 +1,1 @@
-export * from './lib/react-query';
+export { default as useQuery } from './lib/use-query';
