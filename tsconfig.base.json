@@ -15,6 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-microfrontend-workspace/components-ui": [
+        "libs/components-ui/src/index.ts"
+      ],
+      "@nx-microfrontend-workspace/react-query": [
+        "libs/react-query/src/index.ts"
+      ],
+      "@nx-microfrontend-workspace/utils": ["libs/utils/src/index.ts"],
       "remote1/Module": ["apps/remote1/src/remote-entry.ts"],
       "remote2/Module": ["apps/remote2/src/remote-entry.ts"]
     }
