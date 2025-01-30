@@ -1,10 +1,9 @@
 import React from 'react';
-import { FieldError } from 'react-hook-form';
-import FormError from './form-error';
+import FormError, { type FormErrorType } from './form-error';
 
 export type FormFieldProps = {
   children: React.ReactNode;
-  error?: FieldError;
+  error?: FormErrorType;
 };
 
 export default function FormField({ children, error }: FormFieldProps) {

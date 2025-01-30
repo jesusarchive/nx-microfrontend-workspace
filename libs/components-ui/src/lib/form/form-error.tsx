@@ -1,7 +1,9 @@
-import type { FieldError } from 'react-hook-form';
+export type FormErrorType = {
+  message?: string;
+};
 
 export type FormErrorProps = {
-  error?: FieldError;
+  error?: FormErrorType;
 };
 
 export default function FormError({ error }: FormErrorProps) {
