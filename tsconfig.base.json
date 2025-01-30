@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-microfrontend-workspace/characters": [
+        "libs/characters/src/index.ts"
+      ],
       "@nx-microfrontend-workspace/components-ui": [
         "libs/components-ui/src/index.ts"
       ],
