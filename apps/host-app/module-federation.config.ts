@@ -14,7 +14,7 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: ['remote1', 'remote2', 'spa-rickandmorty'],
+  remotes: ['remote1', 'remote2'],
 };
 
 export default config;

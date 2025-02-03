@@ -15,9 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-microfrontend-workspace/characters": [
-        "libs/characters/src/index.ts"
-      ],
       "@nx-microfrontend-workspace/components-ui": [
         "libs/components-ui/src/index.ts"
       ],
@@ -26,8 +23,7 @@
       ],
       "@nx-microfrontend-workspace/utils": ["libs/utils/src/index.ts"],
       "remote1/Module": ["apps/remote1/src/remote-entry.ts"],
-      "remote2/Module": ["apps/remote2/src/remote-entry.ts"],
-      "spa-rickandmorty/Module": ["apps/spa-rickandmorty/src/remote-entry.ts"]
+      "remote2/Module": ["apps/remote2/src/remote-entry.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

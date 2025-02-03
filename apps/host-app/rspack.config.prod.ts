@@ -28,7 +28,6 @@ const prodConfig: ModuleFederationConfig = {
   remotes: [
     ['remote1', 'http://localhost:4201/'],
     ['remote2', 'http://localhost:4202/'],
-    ['spa-rickandmorty', 'http://localhost:4203/'],
   ],
 };
 

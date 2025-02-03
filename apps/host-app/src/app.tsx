@@ -1,4 +1,4 @@
-import '../styles.css';
+import './styles.css';
 import * as React from 'react';
 
 import { Route, Routes, useNavigate } from 'react-router-dom';

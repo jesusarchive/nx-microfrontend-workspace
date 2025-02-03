@@ -1,4 +1,3 @@
-import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -31,6 +30,26 @@ import NameFilter from './filters/name-filter';
 import SpecieFilter from './filters/specie-filter';
 import StatusFilter from './filters/status-filter';
 import TypeFilter from './filters/type-filter';
+
+const customResolver = (schema: z.ZodSchema) => (values: unknown) => {
+  const result = schema.safeParse(values);
+  if (result.success) {
+    return { values: result.data, errors: {} };
+  } else {
+    const errors = result.error.format();
+    return {
+      values: {},
+      errors: Object.keys(errors).reduce((acc, key) => {
+        const errorKey = key as keyof typeof errors;
+        acc[key] = {
+          type: 'validation',
+          message: errors[errorKey]?.[0],
+        };
+        return acc;
+      }, {} as Record<string, { type: string; message?: string }>),
+    };
+  }
+};
 
 const schema = z.object({
   name: z.string().optional(),
@@ -73,7 +92,7 @@ export default function CharacterDataGridHeaderBar() {
     reset,
     formState: { errors },
   } = useForm({
-    resolver: zodResolver(schema),
+    resolver: customResolver(schema),
     defaultValues: state?.filters ?? {},
   });
 
