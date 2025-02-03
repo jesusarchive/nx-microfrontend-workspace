@@ -4,18 +4,30 @@ import * as React from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 const Remote1 = React.lazy(() => import('remote1/Module'));
-
 const Remote2 = React.lazy(() => import('remote2/Module'));
 
 export function App() {
   const navigate = useNavigate();
   const [selectedMicrofrontend, setSelectedMicrofrontend] = React.useState('');
 
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = event.target.value;
-    setSelectedMicrofrontend(value);
-    navigate(value);
-  };
+  const init = React.useCallback(() => {
+    setSelectedMicrofrontend('/remote1');
+    navigate('/remote1');
+  }, [navigate]);
+
+  React.useEffect(() => {
+    init();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleSelectChange = React.useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      const value = event.target.value;
+      setSelectedMicrofrontend(value);
+      navigate(value);
+    },
+    [navigate]
+  );
 
   return (
     <div className="h-screen w-screen flex flex-col p-6 gap-4 overflow-hidden">
